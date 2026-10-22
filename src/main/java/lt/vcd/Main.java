@@ -1,17 +1,25 @@
 package lt.vcd;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+import java.util.Scanner;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Iveskite auksti: ");
+        int h = sc.nextInt();
+        System.out.print("Iveskite ploti: ");
+        int w = sc.nextInt();
+        
+        for (int i = 0; i < h; i++) {
+            for (int j = 0; j < w; j++) {
+                // Jei pirma eilute, paskutine eilute, pirmas stulpelis arba paskutinis stulpelis
+                if (i == 0 || i == h - 1 || j == 0 || j == w - 1) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
         }
     }
 }
